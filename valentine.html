@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Valentine ??</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      font-size: 3rem;
+      animation: beat 1s infinite;
+    }
+
+    button {
+      background: #ff4b6e;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      margin: 5px;
+    }
+
+    button:hover {
+      background: #ff1f4a;
+      transform: scale(1.05);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div id="page1">
+      <div class="heart">??</div>
+      <h1>My Love</h1>
+      <p>
+        Tum meri zindagi ka sabse khoobsurat hissa ho ??<br>
+        Har din tumhare saath ek naya gift jaisa lagta hai.
+      </p>
+      <button onclick="nextPage()">Next ?</button>
+    </div>
+
+    <div id="page2" class="hidden">
+      <h1>Dear Husband ??</h1>
+      <p>
+        Tumne mujhe hamesha pyar, respect aur support diya hai ??<br>
+        Main khud ko lucky samajhti hoon jo tum mere life partner ho.
+      </p>
+      <button onclick="nextPage2()">Next ?</button>
+    </div>
+
+    <div id="page3" class="hidden">
+      <h1>Will You Be My Valentine? ??</h1>
+      <p>
+        Iss Valentine’s Day par…<br>
+        Main tumse phir se pyaar ka izhaar karna chahti hoon ??
+      </p>
+      <button onclick="yesClick()">Yes ??</button>
+      <button onclick="noClick()">No ??</button>
+    </div>
+
+    <div id="page4" class="hidden">
+      <h1>Yayyy!!! ????</h1>
+      <p>
+        Thank you my love ??<br>
+        Main hamesha tumhare saath rahungi.
+      </p>
+      <div class="heart">??????</div>
+    </div>
+  </div>
+
+  <script>
+    function nextPage() {
+      document.getElementById("page1").classList.add("hidden");
+      document.getElementById("page2").classList.remove("hidden");
+    }
+
+    function nextPage2() {
+      document.getElementById("page2").classList.add("hidden");
+      document.getElementById("page3").classList.remove("hidden");
+    }
+
+    function yesClick() {
+      document.getElementById("page3").classList.add("hidden");
+      document.getElementById("page4").classList.remove("hidden");
+    }
+
+    function noClick() {
+      alert("Arre nahi! Sirf Yes allowed hai ????");
+    }
+  </script>
+
+</body>
+</html>
